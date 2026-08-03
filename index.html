@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosa Melissa Medrano | Alta Floristería en Quito</title>
+    <meta name="description" content="Arreglos florales exclusivos y personalizados de lujo en Quito, Ecuador. Diseños que expresan sentimientos eternos.">
+    
+    <!-- Tailwind CSS para diseño responsivo moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: {
+                            50: '#FFF5F6',
+                            100: '#FFEBEF',
+                            200: '#FFD1DA',
+                            300: '#FAA4B3',
+                            400: '#F4738C',
+                            500: '#E84566',
+                        },
+                        brandGreen: {
+                            50: '#F5F7F4',
+                            100: '#E6EBE4',
+                            600: '#4A5D4E',
+                            700: '#3A4D3E',
+                            800: '#2A3B2E',
+                            900: '#1D2A1F',
+                        },
+                        brandGold: {
+                            100: '#FDF6E2',
+                            400: '#DFBA6B',
+                            500: '#C5A059',
+                            600: '#A37F3C',
+                        }
+                    },
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        montserrat: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fuentes premium de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Animaciones personalizadas */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-gold {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(197, 160, 89, 0); }
+        }
+        .pulse-gold-btn {
+            animation: pulse-gold 2s infinite;
+        }
+
+        /* Estilos personalizados para barra de navegación y detalles dorados */
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #DFBA6B, #C5A059, #A37F3C) 1;
+        }
+        .text-shadow-elegant {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-brandPink-50 font-montserrat text-gray-800 selection:bg-brandPink-200 selection:text-brandGreen-900 overflow-x-hidden">
+
+    <!-- BARRA DE ANUNCIO SUPERIOR -->
+    <div class="bg-brandGreen-900 text-brandGold-100 py-2 px-4 text-center text-xs tracking-widest uppercase font-medium">
+        ✨ Envíos Premium a domicilio el mismo día en Quito en compras antes de las 2:00 PM ✨
+    </div>
+
+    <!-- ENCABEZADO (HEADER) -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brandPink-100 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
+            
+            <!-- Logotipo Elegante -->
+            <a href="#inicio" class="flex flex-col items-start select-none">
+                <span class="font-playfair text-xl sm:text-2xl font-bold tracking-wide text-brandGreen-800 leading-tight">
+                    Rosa Melissa
+                </span>
+                <span class="font-montserrat text-xs tracking-[0.3em] text-brandGold-500 uppercase font-semibold">
+                    Medrano
+                </span>
+            </a>
+
+            <!-- Menú de navegación Desktop -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#inicio" class="text-sm font-medium tracking-wider text-gray-600 hover:text-brandGold-500 transition-colors uppercase">Inicio</a>
+                <a href="#catalogo" class="text-sm font-medium tracking-wider text-gray-600 hover:text-brandGold-500 transition-colors uppercase">Catálogo</a>
+                <a href="#servicios" class="text-sm font-medium tracking-wider text-gray-600 hover:text-brandGold-500 transition-colors uppercase">Servicios</a>
+                <a href="#nosotros" class="text-sm font-medium tracking-wider text-gray-600 hover:text-brandGold-500 transition-colors uppercase">Nosotros</a>
+                <a href="#testimonios" class="text-sm font-medium tracking-wider text-gray-600 hover:text-brandGold-500 transition-colors uppercase">Opiniones</a>
+                <a href="#contacto" class="text-sm font-medium tracking-wider text-gray-600 hover:text-brandGold-500 transition-colors uppercase">Contacto</a>
+            </nav>
+
+            <!-- Botones de Acción (Header) -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <!-- Botón Carrito -->
+                <button onclick="toggleCart()" class="relative p-2.5 text-brandGreen-800 hover:text-brandGold-500 transition-colors duration-200" aria-label="Carrito de compras">
+                    <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-brandPink-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white scale-0 transition-transform duration-300">
+                        0
+                    </span>
+                </button>
+
+                <!-- CTA Principal -->
+                <a href="#catalogo" class="hidden sm:inline-block px-5 py-2.5 bg-brandGreen-700 hover:bg-brandGreen-800 text-white font-medium text-xs tracking-widest uppercase rounded-full transition-all duration-300 hover:shadow-md border border-brandGold-500/20">
+                    Haz tu pedido
+                </a>
+
+                <!-- Botón de Menú Móvil -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-brandGreen-800 hover:text-brandGold-500 transition-colors" aria-label="Menú principal">
+                    <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl sm:text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-brandPink-100 bg-white/98 transition-all duration-300 shadow-lg">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#inicio" onclick="toggleMobileMenu()" class="block text-base font-semibold tracking-wide text-gray-700 hover:text-brandGold-500">Inicio</a>
+                <a href="#catalogo" onclick="toggleMobileMenu()" class="block text-base font-semibold tracking-wide text-gray-700 hover:text-brandGold-500">Catálogo</a>
+                <a href="#servicios" onclick="toggleMobileMenu()" class="block text-base font-semibold tracking-wide text-gray-700 hover:text-brandGold-500">Servicios</a>
+                <a href="#nosotros" onclick="toggleMobileMenu()" class="block text-base font-semibold tracking-wide text-gray-700 hover:text-brandGold-500">Nosotros</a>
+                <a href="#testimonios" onclick="toggleMobileMenu()" class="block text-base font-semibold tracking-wide text-gray-700 hover:text-brandGold-500">Testimonios</a>
+                <a href="#contacto" onclick="toggleMobileMenu()" class="block text-base font-semibold tracking-wide text-gray-700 hover:text-brandGold-500">Contacto</a>
+                <a href="#catalogo" onclick="toggleMobileMenu()" class="block w-full py-3 bg-brandGreen-700 text-white text-center rounded-lg font-bold uppercase tracking-wider">
+                    Haz tu pedido
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL (HERO) -->
+    <section id="inicio" class="relative min-h-[85vh] flex items-center py-20 bg-brandGreen-900 text-white overflow-hidden">
+        <!-- Imagen de Fondo Floral Ultra Elegante (Lirios Rosas Locales) -->
+        <div class="absolute inset-0 bg-cover bg-center transition-all duration-700 scale-105" style="background-image: url('image_db349f.jpg'); filter: brightness(0.4) contrast(1.1);"></div>
+        
+        <!-- Textura de capa dorada sutil -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-brandGreen-900/90 via-transparent to-brandGold-600/10 pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+            <div class="max-w-3xl">
+                <!-- Distintivo Elegante -->
+                <div class="inline-flex items-center space-x-2 bg-brandGold-500/20 backdrop-blur-sm border border-brandGold-400/35 px-4 py-1.5 rounded-full mb-6">
+                    <span class="w-1.5 h-1.5 bg-brandGold-400 rounded-full animate-ping"></span>
+                    <span class="text-xs font-semibold tracking-[0.2em] uppercase text-brandGold-100">Boutique de Arte Floral • Quito</span>
+                </div>
+                
+                <h1 class="font-playfair text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight text-shadow-elegant">
+                    Flores que expresan lo que las <span class="italic text-brandPink-200">palabras</span> no pueden.
+                </h1>
+                
+                <p class="font-montserrat text-base sm:text-lg text-gray-200 font-light mb-10 leading-relaxed max-w-2xl">
+                    Arreglos florales sofisticados y de alta costura diseñados a mano para toda ocasión en Quito: cumpleaños, aniversarios, bodas, graduaciones y momentos memorables.
+                </p>
+
+                <!-- Botones del Hero -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="#catalogo" class="px-8 py-4 bg-brandGold-500 hover:bg-brandGold-600 text-white font-semibold text-sm tracking-wider uppercase rounded-full shadow-lg hover:shadow-brandGold-500/25 transition-all text-center pulse-gold-btn">
+                        Ver Catálogo <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                    <a href="https://wa.me/593991234567?text=Hola%20Rosa%20Melissa%20Medrano,%20quisiera%20solicitar%20un%20arreglo%20floral%20personalizado%20en%20Quito." target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm tracking-wider uppercase rounded-full transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicador de Scroll hacia abajo -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-70 animate-bounce">
+            <span class="text-xs uppercase tracking-widest text-brandGold-100 mb-2 font-light">Explora</span>
+            <i class="fa-solid fa-chevron-down text-brandGold-400"></i>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CATEGORÍAS & FILTROS (CATÁLOGO) -->
+    <section id="catalogo" class="py-20 sm:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="font-playfair text-brandGold-500 italic text-lg sm:text-xl block mb-2">Colección de Temporada</span>
+                <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-brandGreen-800 tracking-tight">
+                    Catálogo de Productos
+                </h2>
+                <div class="w-16 h-1 bg-brandGold-500 mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-500 text-sm sm:text-base font-light">
+                    Selecciona una categoría para descubrir creaciones inspiradas en la belleza natural más pura, diseñadas meticulosamente por nuestros maestros floristas en dólares (USD).
+                </p>
+            </div>
+
+            <!-- Filtros de Categorías Dinámicos -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+                <button onclick="filterCatalog('todos')" id="btn-todos" class="category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandGreen-700 text-white shadow-sm border border-brandGreen-700">
+                    Todos
+                </button>
+                <button onclick="filterCatalog('rosas')" id="btn-rosas" class="category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandPink-50 text-brandGreen-800 hover:bg-brandPink-100 border border-brandPink-100">
+                    Ramos de Rosas
+                </button>
+                <button onclick="filterCatalog('girasoles')" id="btn-girasoles" class="category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandPink-50 text-brandGreen-800 hover:bg-brandPink-100 border border-brandPink-100">
+                    Girasoles
+                </button>
+                <button onclick="filterCatalog('tulipanes')" id="btn-tulipanes" class="category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandPink-50 text-brandGreen-800 hover:bg-brandPink-100 border border-brandPink-100">
+                    Tulipanes
+                </button>
+                <button onclick="filterCatalog('orquideas')" id="btn-orquideas" class="category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandPink-50 text-brandGreen-800 hover:bg-brandPink-100 border border-brandPink-100">
+                    Orquídeas
+                </button>
+                <button onclick="filterCatalog('premium')" id="btn-premium" class="category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandPink-50 text-brandGreen-800 hover:bg-brandPink-100 border border-brandPink-100">
+                    Arreglos Premium
+                </button>
+                <button onclick="filterCatalog('cajas')" id="btn-cajas" class="category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandPink-50 text-brandGreen-800 hover:bg-brandPink-100 border border-brandPink-100">
+                    Cajas de Flores
+                </button>
+                <button onclick="filterCatalog('bodas')" id="btn-bodas" class="category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandPink-50 text-brandGreen-800 hover:bg-brandPink-100 border border-brandPink-100">
+                    Bodas
+                </button>
+                <button onclick="filterCatalog('eventos')" id="btn-eventos" class="category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandPink-50 text-brandGreen-800 hover:bg-brandPink-100 border border-brandPink-100">
+                    Eventos
+                </button>
+            </div>
+
+            <!-- Grilla de Tarjetas de Productos -->
+            <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Los productos se inyectarán de forma dinámica mediante JavaScript con soporte de imágenes y detalles -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: NUESTROS SERVICIOS -->
+    <section id="servicios" class="py-20 sm:py-28 bg-brandPink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="font-playfair text-brandGold-500 italic text-lg sm:text-xl block mb-2">Compromiso de Excelencia</span>
+                <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-brandGreen-800 tracking-tight">
+                    Nuestros Servicios
+                </h2>
+                <div class="w-16 h-1 bg-brandGold-500 mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-500 text-sm sm:text-base font-light">
+                    Ofrecemos una gama de servicios excepcionales en toda el área metropolitana de Quito; creamos experiencias sensoriales integrales.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1: Entrega a Domicilio -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-brandPink-100 group">
+                    <div class="w-14 h-14 bg-brandPink-100 text-brandPink-500 rounded-xl flex items-center justify-center mb-6 text-2xl group-hover:bg-brandPink-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-brandGreen-800 mb-3">Entrega a Domicilio</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">
+                        Llevamos frescura y amor directamente a la puerta del destinatario en Quito con nuestro transporte climatizado para preservar los pétalos.
+                    </p>
+                </div>
+
+                <!-- Servicio 2: Decoración de Eventos -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-brandPink-100 group">
+                    <div class="w-14 h-14 bg-brandGold-100 text-brandGold-500 rounded-xl flex items-center justify-center mb-6 text-2xl group-hover:bg-brandGold-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-glass-cheers"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-brandGreen-800 mb-3">Decoración de Eventos</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">
+                        Transformamos espacios con arreglos florales arquitectónicos para bodas, aniversarios, galas y celebraciones memorables.
+                    </p>
+                </div>
+
+                <!-- Servicio 3: Arreglos Personalizados -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-brandPink-100 group">
+                    <div class="w-14 h-14 bg-brandGreen-100 text-brandGreen-600 rounded-xl flex items-center justify-center mb-6 text-2xl group-hover:bg-brandGreen-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-brandGreen-800 mb-3">Arreglos Personalizados</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">
+                        Trabajamos contigo para seleccionar cada flor, color y textura, materializando el mensaje exacto que deseas transmitir.
+                    </p>
+                </div>
+
+                <!-- Servicio 4: Flores para Empresas -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-brandPink-100 group">
+                    <div class="w-14 h-14 bg-brandGreen-100 text-brandGreen-600 rounded-xl flex items-center justify-center mb-6 text-2xl group-hover:bg-brandGreen-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-brandGreen-800 mb-3">Suscripciones Corporativas</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">
+                        Ofrecemos planes de suscripción para oficinas, hoteles y restaurantes en Quito que desean mantener una atmósfera elegante y natural.
+                    </p>
+                </div>
+
+                <!-- Servicio 5: Regalos con Flores -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-brandPink-100 group">
+                    <div class="w-14 h-14 bg-brandPink-100 text-brandPink-500 rounded-xl flex items-center justify-center mb-6 text-2xl group-hover:bg-brandPink-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-brandGreen-800 mb-3">Detalles y Regalos</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">
+                        Complementamos tus flores con finos chocolates, globos premium, botellas seleccionadas y tarjetas hechas a mano.
+                    </p>
+                </div>
+
+                <!-- Servicio 6: Asesoría de Cuidado -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-brandPink-100 group">
+                    <div class="w-14 h-14 bg-brandGold-100 text-brandGold-500 rounded-xl flex items-center justify-center mb-6 text-2xl group-hover:bg-brandGold-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-brandGreen-800 mb-3">Cuidado y Conservación</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">
+                        Cada uno de nuestros pedidos incluye nutrientes de corte y guías específicas para asegurar que tus flores se mantengan radiantes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: NOSOTROS -->
+    <section id="nosotros" class="py-20 sm:py-28 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Columna de Imágenes Relacionadas -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-brandGold-100 max-w-md mx-auto lg:max-w-none">
+                        <img src="https://imgs.search.brave.com/ADKfajdEvpYZVMarPgk1iX99eL_MmcVgzgyFuRGXXSY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mbG9y/aXN0ZXJpYWxhY29s/aW5hLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxOC8wOS9B/cnJlZ2xvLUZsb3Jh/bC1Db24tUm9zYXMt/eS1hc3Ryb21lbGlh/cy1Cb2dvdGEtVHVy/aW4tNDAweDQwMC5q/cGc" alt="[Arreglo floral exclusivo de Rosa Melissa Medrano]" class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <!-- Decoración de Fondo -->
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-brandPink-100 rounded-full z-0 pointer-events-none"></div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-brandGold-100 rounded-2xl z-0 pointer-events-none"></div>
+                </div>
+
+                <!-- Columna del Texto de Nuestra Historia -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-brandPink-100 px-3 py-1 rounded-full text-xs font-semibold text-brandPink-500 uppercase tracking-widest">
+                        Nuestra Esencia
+                    </div>
+                    <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-brandGreen-800 tracking-tight leading-tight">
+                        Pinceladas de Naturaleza y Amor Verdadero
+                    </h2>
+                    <p class="text-gray-600 font-light leading-relaxed text-sm sm:text-base">
+                        En **Rosa Melissa Medrano**, entendemos las flores no solo como adornos, sino como portadoras de los sentimientos más íntimos del ser humano. Fundada con el deseo de revolucionar el diseño floral clásico, combinamos las técnicas tradicionales de composición con las vanguardias globales del lujo floral.
+                    </p>
+                    <p class="text-gray-600 font-light leading-relaxed text-sm sm:text-base">
+                        Cada capullo, cada rama y cada lazo son elegidos personalmente de invernaderos locales de comercio justo y socios internacionales calificados. Esto nos permite garantizar arreglos impecables, llenos de volumen, con colores vívidos y de una frescura y duración inigualables.
+                    </p>
+
+                    <!-- Valores Clave -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-brandGold-500 mt-1"><i class="fa-solid fa-heart text-xl"></i></span>
+                            <div>
+                                <h4 class="font-semibold text-brandGreen-800 text-sm">Amor por el Detalle</h4>
+                                <p class="text-xs text-gray-500 font-light">Envolturas con papeles importados y listones de seda.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-brandGold-500 mt-1"><i class="fa-solid fa-gem text-xl"></i></span>
+                            <div>
+                                <h4 class="font-semibold text-brandGreen-800 text-sm">Flores Premium</h4>
+                                <p class="text-xs text-gray-500 font-light">Especies finas seleccionadas en su punto ideal de madurez.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-brandGold-500 mt-1"><i class="fa-solid fa-clock text-xl"></i></span>
+                            <div>
+                                <h4 class="font-semibold text-brandGreen-800 text-sm">Atención Dedicada</h4>
+                                <p class="text-xs text-gray-500 font-light">Garantía de satisfacción y soporte telefónico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: TESTIMONIOS -->
+    <section id="testimonios" class="py-20 sm:py-28 bg-brandGreen-800 text-white relative">
+        <div class="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none" style="background-image: url('image_db349f.jpg');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="font-playfair text-brandGold-400 italic text-lg sm:text-xl block mb-2">Historias que Inspiran</span>
+                <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+                    Opiniones de Clientes
+                </h2>
+                <div class="w-16 h-1 bg-brandGold-400 mx-auto mt-4 mb-6"></div>
+                <p class="text-brandGreen-100 text-sm sm:text-base font-light">
+                    Nuestra mayor recompensa es ser parte de tus momentos más significativos. Conoce las opiniones de quienes ya confían en nosotros.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-brandGreen-900/60 backdrop-blur-sm p-8 rounded-2xl border border-brandGreen-700/50 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brandGold-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-200 font-light text-sm italic leading-relaxed mb-6">
+                            "El arreglo premium superó con creces mis expectativas. Mi esposa quedó fascinada con la presentación y el perfume natural que inundó toda la sala por más de una semana. ¡Súper profesionales!"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=120&h=120" alt="[Alejandro Mendoza]" class="w-12 h-12 rounded-full object-cover border-2 border-brandGold-400">
+                        <div>
+                            <h4 class="font-bold text-sm">Alejandro Mendoza</h4>
+                            <span class="text-xs text-brandGold-400">Cliente Frecuente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-brandGreen-900/60 backdrop-blur-sm p-8 rounded-2xl border border-brandGreen-700/50 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brandGold-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-200 font-light text-sm italic leading-relaxed mb-6">
+                            "Los contratamos para la decoración floral de nuestra boda de oro y fue un sueño hecho realidad. Los invitados comentaron sobre la elegancia de las orquídeas y los centros de mesa. La atención de Melissa es única."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=120&h=120" alt="[Sofía González]" class="w-12 h-12 rounded-full object-cover border-2 border-brandGold-400">
+                        <div>
+                            <h4 class="font-bold text-sm">Sofía González</h4>
+                            <span class="text-xs text-brandGold-400">Diseño de Evento</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-brandGreen-900/60 backdrop-blur-sm p-8 rounded-2xl border border-brandGreen-700/50 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brandGold-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-200 font-light text-sm italic leading-relaxed mb-6">
+                            "Compré una caja de flores y tulipanes a última hora para el aniversario de mi madre. La entrega a domicilio fue impecable y las flores se veían sumamente tiernas y llenas de vida. Recomiendo totalmente."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=120&h=120" alt="[Valeria Luján]" class="w-12 h-12 rounded-full object-cover border-2 border-brandGold-400">
+                        <div>
+                            <h4 class="font-bold text-sm">Valeria Luján</h4>
+                            <span class="text-xs text-brandGold-400">Cliente Habitual</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: GALERÍA DE ARTE FLORAL (MOSAICO) -->
+    <section class="py-20 sm:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="font-playfair text-brandGold-500 italic text-lg sm:text-xl block mb-2">Nuestras Creaciones</span>
+                <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-brandGreen-800 tracking-tight font-bold">
+                    Galería de Diseños
+                </h2>
+                <div class="w-16 h-1 bg-brandGold-500 mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-500 text-sm sm:text-base font-light">
+                    Explora instantáneas reales de nuestras obras maestras florales. Cada composición refleja un balance perfecto entre arte y naturaleza.
+                </p>
+            </div>
+
+            <!-- Mosaico de Galería Responsivo e Impecable (Usando imágenes locales) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="overflow-hidden rounded-2xl shadow-sm h-64 md:h-80 group relative">
+                    <img src="https://imgs.search.brave.com/2X08M8v2LLs3mEFNpbOhz8m9NzN7o9px2IUmb9Qi_hE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG54/Lmp1bXBzZWxsZXIu/Y29tL2Zsb3Jlcy1k/ZS1sYXVyYS9pbWFn/ZS83NjY4MTMwL3Ro/dW1iLzcxOS83MTk_/MTY0NDQzMTMwMg" alt="[Detalle de ramo de rosas de Rosa Melissa Medrano]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brandGreen-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-sm font-semibold tracking-wider">Ramo Tradición Floral</div>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-sm h-64 md:h-80 group relative">
+                    <img src="https://imgs.search.brave.com/ZwzNTNEEjBOOMSOJm5OH2IJAN02qN8cHikAgJTrUDa8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/eWFha3VuZmxvcmVz/LmNvbS91cGxvYWRz/L2FycmVnbG9zL2Nv/ZnJlLWdyYW5kZS1u/ZWdyb2dpcmFzb2xl/cy1yb3NhLWxpc2lh/bnRodXMtZ3JlZW4t/eS1hbWFyYW50by1i/bGFuY28uanBn" alt="[Girasoles majestuosos de Rosa Melissa Medrano]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brandGreen-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-sm font-semibold tracking-wider">Luz de Girasol</div>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-sm h-64 md:h-80 group relative">
+                    <img src="https://imgs.search.brave.com/uLcxRD1RhDYqfGgyZJEW3p5kBvLU53BuUj2pB36JmoY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aG9sYS5jb20vaG9y/aXpvbi9vcmlnaW5h/bF9hc3BlY3RfcmF0/aW8vNjBlNjRhYmJk/ZWNjLWRlY29wcm9k/dWNjaW9uLWxvcXVl/bm92ZXNmb3RvZ3Jh/Zmlhcy5qcGc" alt="[Tulipanes holandeses seleccionados de Rosa Melissa Medrano]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brandGreen-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-sm font-semibold tracking-wider">Amanecer Tulipán</div>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-sm h-64 md:h-80 group relative">
+                    <img src="https://imgs.search.brave.com/-Rlnrl6c0UgcUA5v-4DMdRs-uAbwbaEEYGOUk-zjoEA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9maW9y/ZWNvbG9tYmlhLmNv/bS9jZG4vc2hvcC9m/aWxlcy9EaXNlbm9z/aW50aXR1bG9fMjUu/cG5nP3Y9MTcwNTI4/NDI1NSZ3aWR0aD0x/NDQ1" alt="[Orquídea exótica premium de Rosa Melissa Medrano]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brandGreen-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-sm font-semibold tracking-wider">Elegancia Exótica</div>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-sm h-64 md:h-80 group relative">
+                    <img src="https://imgs.search.brave.com/_CymVySPtdelIwVf6HpILprERdAbKK-tj8tpdbOyOqQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sYXRp/bmZsb3Jlcy5jb20v/Y2RuL3Nob3AvZmls/ZXMvRGVBbW9yLUxp/cmlvc3Jvc2Fkb3Nl/Um9zYXNyb2phcy5q/cGc_dj0xNzQ1MjA0/Mjk1JndpZHRoPTE5/NDY" alt="[Arreglo premium de gala de Rosa Melissa Medrano]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brandGreen-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-sm font-semibold tracking-wider">Cena de Gala Premium</div>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-sm h-64 md:h-80 group relative">
+                    <img src="https://imgs.search.brave.com/h3SmosXjvngeuwgo1zZnTXDPl6Ulrm-szKVHjoqtkGc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mbG9y/ZXNsYW50YW5hLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MC8wMi83LmNhamEt/ZWxlZ2FudGUuTG9u/Zy1hcHJveC02MC1j/bS5qcGc" alt="[Elegante caja con flores de Rosa Melissa Medrano]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brandGreen-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-sm font-semibold tracking-wider">Cofre de Ensueño</div>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-sm h-64 md:h-80 group relative">
+                    <img src="https://imgs.search.brave.com/t-IJGb8LKfCsYWNAaVb-4YYv-dKO03vahj1UG7CGo1k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGV4ZWxzLmNv/bS9waG90b3MvMzEw/NDYwNjUvcGV4ZWxz/LXBob3RvLTMxMDQ2/MDY1L2ZyZWUtcGhv/dG8tb2YtZWxlZ2Fu/dGUtcmFtby1kZS1u/b3ZpYS1jb24tcm9z/YXMteS1ldWNhbGlw/dG8uanBlZz9hdXRv/PWNvbXByZXNzJmNz/PXRpbnlzcmdiJmRw/cj0xJnc9NTAw" alt="[Diseño de flores de boda de Rosa Melissa Medrano]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brandGreen-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-sm font-semibold tracking-wider">Sí, Acepto Floral</div>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-sm h-64 md:h-80 group relative">
+                    <img src="https://imgs.search.brave.com/JbWQYtqbc8YkO6p52IrZGM4gf1zRNf0OgHBE15cKn7U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc3F1YXJlc3Bh/Y2UtY2RuLmNvbS9j/b250ZW50L3YxLzVi/ZGI0ZTJlY2M4ZmVk/ZThkYTI5MzZmZC8y/OWE1YjY5NC1jODhm/LTRhZDItODNiMi1j/ZmRkMTIwN2IwMTkv/SU1HXzAwOTQuanBn" alt="[Arreglo monumental para eventos de Rosa Melissa Medrano]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-brandGreen-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-sm font-semibold tracking-wider">Recepción Monumental</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CONTACTO & UBICACIÓN -->
+    <section id="contacto" class="py-20 sm:py-28 bg-brandPink-100/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="font-playfair text-brandGold-500 italic text-lg sm:text-xl block mb-2">¿Cómo podemos ayudarte?</span>
+                <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-brandGreen-800 tracking-tight">
+                    Haz tu Consulta o Pedido
+                </h2>
+                <div class="w-16 h-1 bg-brandGold-500 mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-500 text-sm sm:text-base font-light">
+                    Estamos listos para escucharte. Déjanos tus datos o visita nuestra ubicación para inspirarte directamente en nuestro taller.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <!-- Columna Formulario -->
+                <div class="lg:col-span-7 bg-white p-8 sm:p-12 rounded-3xl shadow-sm border border-brandPink-100 flex flex-col justify-between">
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2" for="nombre">Nombre Completo</label>
+                                <input class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandGold-400 focus:border-transparent transition-all" type="text" id="nombre" placeholder="Ej. Ana María" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2" for="email">Correo Electrónico</label>
+                                <input class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandGold-400 focus:border-transparent transition-all" type="email" id="email" placeholder="ana@ejemplo.com" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2" for="telefono">Número Telefónico</label>
+                            <input class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandGold-400 focus:border-transparent transition-all" type="tel" id="telefono" placeholder="+593 99 123 4567" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2" for="mensaje">Tu Mensaje o Requerimiento Especial</label>
+                            <textarea class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandGold-400 focus:border-transparent transition-all" id="mensaje" rows="4" placeholder="Cuéntanos qué flores buscas, la fecha del evento o detalles de tu dedicatoria..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-brandGreen-700 hover:bg-brandGreen-800 text-white font-bold text-xs sm:text-sm tracking-widest uppercase rounded-xl shadow-lg transition-all">
+                            Enviar Mensaje Elegante <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Columna Detalles de Contacto / Ubicación Real -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+                    <div class="bg-brandGreen-900 text-white p-8 sm:p-10 rounded-3xl shadow-sm border border-brandGold-500/20 relative overflow-hidden flex-1 flex flex-col justify-between">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-5 pointer-events-none" style="background-image: url('image_db349f.jpg');"></div>
+                        <div class="relative z-10">
+                            <span class="text-xs font-bold text-brandGold-400 uppercase tracking-widest block mb-4">¿Dónde Encontrarnos?</span>
+                            <h3 class="font-playfair text-2xl font-bold mb-6">Detalles de la Boutique</h3>
+                            
+                            <div class="space-y-4 text-sm text-gray-200">
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-brandGold-400 mt-1"><i class="fa-solid fa-location-dot"></i></span>
+                                    <p class="font-light">Av. de los Shyris N34-122 y Holanda (Sector La Carolina), Quito, Ecuador.</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-brandGold-400 mt-1"><i class="fa-solid fa-phone"></i></span>
+                                    <p class="font-light">+593 99 123 4567</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-brandGold-400 mt-1"><i class="fa-solid fa-envelope"></i></span>
+                                    <p class="font-light">contacto@rosamelissamedrano.com</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-brandGold-400 mt-1"><i class="fa-solid fa-clock"></i></span>
+                                    <div>
+                                        <p class="font-semibold text-brandGold-100">Horario de Atención:</p>
+                                        <p class="font-light text-xs">Lunes a Sábado: 8:00 AM - 8:00 PM</p>
+                                        <p class="font-light text-xs">Domingos: 9:00 AM - 4:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 pt-6 border-t border-brandGreen-800 flex items-center space-x-3">
+                            <a href="#" class="w-10 h-10 bg-brandGreen-800 hover:bg-brandGold-500 rounded-full flex items-center justify-center text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 bg-brandGreen-800 hover:bg-brandGold-500 rounded-full flex items-center justify-center text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 bg-brandGreen-800 hover:bg-brandGold-500 rounded-full flex items-center justify-center text-white transition-all"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="https://wa.me/593991234567" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-brandGreen-800 hover:bg-brandGold-500 rounded-full flex items-center justify-center text-white transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Mapa de Ubicación en Quito (Sector La Carolina / Shyris) -->
+                    <div class="rounded-3xl overflow-hidden shadow-sm border border-brandPink-100 h-64 relative">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.791524317181!2d-78.4842131!3d-0.1806531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a710260495b%3A0x6b7754b2d56d22ef!2sAv.%20de%20los%20Shyris%2C%20Quito%2C%20Ecuador!5e0!3m2!1ses-419!2sec!4v1680000000000!5m2!1ses-419!2sec" 
+                            class="absolute inset-0 w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-500" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer class="bg-brandGreen-900 text-white py-16 border-t-2 border-brandGold-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Columna 1: Firma -->
+                <div class="space-y-4">
+                    <a href="#inicio" class="flex flex-col items-start">
+                        <span class="font-playfair text-2xl font-bold tracking-wide text-brandGold-100">
+                            Rosa Melissa
+                        </span>
+                        <span class="font-montserrat text-xs tracking-[0.3em] text-brandGold-400 uppercase font-semibold">
+                            Medrano
+                        </span>
+                    </a>
+                    <p class="text-xs text-gray-300 font-light leading-relaxed">
+                        Comprometidos con el arte y el lujo natural. Expresamos la belleza de cada emoción humana a través de creaciones florales únicas hechas a mano en Quito, Ecuador.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold text-brandGold-100 mb-4">Enlaces Útiles</h4>
+                    <ul class="space-y-2 text-xs text-gray-300 font-light">
+                        <li><a href="#inicio" class="hover:text-brandGold-400 transition-colors">Inicio</a></li>
+                        <li><a href="#catalogo" class="hover:text-brandGold-400 transition-colors">Catálogo Completo</a></li>
+                        <li><a href="#servicios" class="hover:text-brandGold-400 transition-colors">Nuestros Servicios</a></li>
+                        <li><a href="#nosotros" class="hover:text-brandGold-400 transition-colors">Nuestra Historia</a></li>
+                        <li><a href="#contacto" class="hover:text-brandGold-400 transition-colors">Contáctanos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Categorías Populares -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold text-brandGold-100 mb-4">Categorías Estrellas</h4>
+                    <ul class="space-y-2 text-xs text-gray-300 font-light">
+                        <li><a href="#catalogo" onclick="filterCatalog('rosas')" class="hover:text-brandGold-400 transition-colors">Ramos de Rosas</a></li>
+                        <li><a href="#catalogo" onclick="filterCatalog('premium')" class="hover:text-brandGold-400 transition-colors">Arreglos Premium</a></li>
+                        <li><a href="#catalogo" onclick="filterCatalog('bodas')" class="hover:text-brandGold-400 transition-colors">Flores para Bodas</a></li>
+                        <li><a href="#catalogo" onclick="filterCatalog('orquideas')" class="hover:text-brandGold-400 transition-colors">Orquídeas Exclusivas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Suscripción a Club de Beneficios -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold text-brandGold-100 mb-4">Club Rosa Melissa</h4>
+                    <p class="text-xs text-gray-300 font-light mb-4">Recibe consejos de conservación, tendencias botánicas y ofertas VIP en Ecuador antes que nadie.</p>
+                    <form onsubmit="handleSubscribe(event)" class="flex">
+                        <input type="email" id="newsletter-email" placeholder="Tu correo" class="px-3 py-2 bg-brandGreen-800 text-white text-xs rounded-l-lg focus:outline-none focus:ring-1 focus:ring-brandGold-400 w-full" required>
+                        <button type="submit" class="bg-brandGold-500 hover:bg-brandGold-600 text-white px-3 py-2 rounded-r-lg text-xs font-semibold">Unirme</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Redes Sociales y Copyright -->
+            <div class="border-t border-brandGreen-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 font-light">
+                <p>&copy; 2026 Rosa Melissa Medrano S.A. Todos los derechos reservados.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Términos de Servicio</a>
+                    <a href="#" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN DE WHATSAPP FLOTANTE (Con número de Ecuador +593) -->
+    <a href="https://wa.me/593991234567?text=Hola,%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20en%20Quito." target="_blank" rel="noopener noreferrer" class="whatsapp-float fixed bottom-6 right-6 w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center text-3xl shadow-xl z-50 animate-float transition-all hover:scale-110" aria-label="Enviar WhatsApp de consulta">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- TOAST DE NOTIFICACIONES (ALERT MODERNO) -->
+    <div id="toast" class="fixed top-24 right-6 bg-brandGreen-800 text-white px-6 py-4 rounded-xl shadow-2xl z-50 transform translate-x-[150%] transition-transform duration-300 border border-brandGold-400 flex items-center space-x-3">
+        <span class="text-brandGold-400 text-lg" id="toast-icon"><i class="fa-solid fa-circle-check"></i></span>
+        <p class="text-xs sm:text-sm font-medium" id="toast-message">Producto añadido al carrito correctamente.</p>
+    </div>
+
+    <!-- CAJÓN DE CARRITO (CARRITO DE COMPRAS DESLIZANTE) -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="cart-overlay" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex">
+            <div class="w-screen max-w-md bg-white shadow-2xl pointer-events-auto transform translate-x-full transition-transform duration-300 flex flex-col justify-between" id="cart-panel">
+                <!-- Cabecera del Carrito -->
+                <div class="p-6 border-b border-brandPink-100 flex items-center justify-between bg-brandPink-50">
+                    <h3 class="font-playfair text-xl font-bold text-brandGreen-800 flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-brandGold-500"></i> Tu Pedido Floral
+                    </h3>
+                    <button onclick="toggleCart()" class="p-2 text-gray-500 hover:text-brandPink-500 transition-colors">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Lista de Productos en Carrito -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-4" id="cart-items">
+                    <!-- Se inyecta dinámicamente -->
+                    <div class="text-center py-12 text-gray-400 space-y-4">
+                        <i class="fa-solid fa-spa text-5xl text-brandPink-200"></i>
+                        <p class="text-sm font-light">Aún no has agregado flores a tu pedido.</p>
+                    </div>
+                </div>
+
+                <!-- Panel de Compra / WhatsApp Checkout -->
+                <div class="p-6 border-t border-brandPink-100 space-y-4 bg-brandPink-50">
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-500 font-medium">Subtotal</span>
+                        <span class="text-brandGreen-800 font-bold" id="cart-subtotal">$0.00</span>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-400">
+                        <span>Envío</span>
+                        <span class="text-green-600 font-semibold">¡GRATIS en el centro-norte de Quito!</span>
+                    </div>
+                    <div class="border-t border-brandPink-200/50 pt-4 flex items-center justify-between text-base">
+                        <span class="text-brandGreen-800 font-bold">Total Estimado</span>
+                        <span class="text-brandGold-600 font-black" id="cart-total">$0.00</span>
+                    </div>
+
+                    <button onclick="sendOrderWhatsApp()" class="w-full py-4 bg-green-500 hover:bg-green-600 text-white font-bold text-xs tracking-wider uppercase rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Confirmar Pedido vía WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE DETALLE DE PRODUCTO PREMIUM -->
+    <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm pointer-events-none opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl overflow-hidden max-w-lg w-full shadow-2xl border border-brandGold-100 transform scale-95 transition-transform duration-300 pointer-events-auto" id="product-modal-content">
+            <!-- Imagen del Producto -->
+            <div class="relative h-64 sm:h-80">
+                <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+                <button onclick="closeProductModal()" class="absolute top-4 right-4 bg-white/80 hover:bg-white text-brandGreen-800 p-2 rounded-full shadow-md transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <!-- Cuerpo del Modal -->
+            <div class="p-6 sm:p-8 space-y-4">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 id="modal-title" class="font-playfair text-2xl font-bold text-brandGreen-800">Nombre de Producto</h3>
+                        <p id="modal-category" class="text-xs text-brandGold-500 font-bold uppercase tracking-wider mt-1">Categoría</p>
+                    </div>
+                    <span id="modal-price" class="text-xl font-bold text-brandGreen-800">$0.00</span>
+                </div>
+                
+                <p id="modal-desc" class="text-gray-500 text-xs sm:text-sm font-light leading-relaxed">Descripción detallada</p>
+
+                <!-- Personalización adicional -->
+                <div class="bg-brandPink-50 p-4 rounded-xl space-y-3 border border-brandPink-100">
+                    <p class="text-xs font-semibold text-brandGreen-800 uppercase tracking-wider">Añadir detalle único:</p>
+                    <textarea id="modal-custom-message" placeholder="Escribe un mensaje emotivo para la dedicatoria o instrucciones especiales..." class="w-full text-xs p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-brandGold-400 bg-white" rows="2"></textarea>
+                </div>
+
+                <div class="flex space-x-3 pt-2">
+                    <button id="modal-add-btn" class="flex-1 py-3 bg-brandGreen-700 hover:bg-brandGreen-800 text-white text-xs font-bold uppercase tracking-widest rounded-xl shadow-md transition-all">
+                        Agregar al Carrito <i class="fa-solid fa-cart-plus ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT: LOGICA INTERACTIVA COMPLETA -->
+    <script>
+        // BASE DE DATOS DE PRODUCTOS EXCLUSIVOS EN DÓLARES (USD) CON IMÁGENES LOCALES
+        const products = [
+            {
+                id: 'ros-01',
+                name: 'Ramo Tradición Rosa',
+                category: 'rosas',
+                price: 45.00,
+                desc: 'Ramo premium de rosas en capullo fresco de color intenso, envuelto en finos papeles importados.',
+                image: 'https://imgs.search.brave.com/7mfFa2wgAusIZp_N4Yv1-r0OhX3AbCPFTromogNnyWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW50ZXJmbG9yYS5l/cy9ibG9nL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDI0LzAxL3Jh/bW8tZGUtcm9zYXMu/anBnP2Zyei12PTE2/MTU',
+                detailedDesc: 'Un tributo al amor romántico tradicional. Este ramo se compone de rosas seleccionadas con tallos largos de 60 cm, acompañadas de follaje aromático de eucalipto dólar y envoltura de lino japonés premium.'
+            },
+            {
+                id: 'gir-02',
+                name: 'Majestuoso Luz Solar',
+                category: 'girasoles',
+                price: 35.00,
+                desc: 'Arreglo espectacular de girasoles premium con detalles de follaje exótico silvestre.',
+                image: 'https://imgs.search.brave.com/g-eEFO8GZ5_1lhVDwMZBYRn3lwj3_7mg08lmiIUiszA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29tcHJhbGVmbG9y/ZXMuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIxLzA0L0Fs/ZWdyZS1Tb3JwcmVz/YTEuanBn',
+                detailedDesc: 'Transmite felicidad pura, optimismo y admiración. Girasoles de gran escala, seleccionados meticulosamente en su punto óptimo de apertura para garantizar una presencia imponente y duradera.'
+            },
+            {
+                id: 'tul-03',
+                name: 'Amanecer Tulipán Dulce',
+                category: 'tulipanes',
+                price: 50.00,
+                desc: 'Tulipanes holandeses en tonos suaves y cálidos, perfectos para celebrar aniversarios tiernos.',
+                image: 'https://imgs.search.brave.com/KZfBw-4YQIa_FC7MjNsVr6uykOQ6bTglO1-IGqZeOKU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sYXZp/b2xldGVyYS5jb20u/bXgvY2RuL3Nob3Av/cHJvZHVjdHMvQVJS/RUdMTy1Tb2ZpYV8w/MDAxX0RTQzA0OTg1/XzYwMHguanBnP3Y9/MTY3NjA1Nzc2Mg',
+                detailedDesc: 'Un diseño sobrio, sofisticado y contemporáneo. Los tulipanes holandeses expresan delicadeza perfecta. Entregados en un sofisticado jarrón de vidrio soplado o envoltura de alta costura.'
+            },
+            {
+                id: 'orq-04',
+                name: 'Elegancia Blanca Exótica',
+                category: 'orquideas',
+                price: 65.00,
+                desc: 'Elegante orquídea Phalaenopsis blanca plantada en fina maceta de cerámica con acabados dorados.',
+                image: 'https://imgs.search.brave.com/gbO7cSK5623aeNPnktk--LYSa9Sq3-K8LV_QuaUpew8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFlU3pRWVRYOUwu/anBn',
+                detailedDesc: 'El regalo más refinado para celebrar éxitos profesionales o transmitir un pésame respetuoso y solemne. Incluye base de cerámica de lujo y guía exclusiva para cuidado de orquídeas en el hogar.'
+            },
+            {
+                id: 'pre-05',
+                name: 'Centro Gala Premium',
+                category: 'premium',
+                price: 85.00,
+                desc: 'Arreglo monumental de gala, ideal para banquetes u ocasiones donde se busca impactar con sofisticación.',
+                image: 'https://imgs.search.brave.com/k0hAXArnn20UVL9kSHQVjUucUrXeODnAFYEN1bMnfkw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9wcmVz/aWRpby1kZS1ib2Rh/cy1lbi1lbC1lc3Bh/Y2lvLWxpYnJlLWRl/bC1yZXN0YXVyYW50/ZS1tZXNhLWJhbnF1/ZXRlcy1ib2RhLXBh/cmEtcmVjaSVDMyVB/OW4tY2FzYWRvcy1j/b24tdGVsYS1tZWxv/Y290JUMzJUIzbi12/ZXJkZS0xOTIxNzM3/OTQuanBn',
+                detailedDesc: 'Composición floral tridimensional con flores finas: hortensias, rosas selectas, follaje verde olivo y lilis. Diseñado para embellecer cualquier estancia con opulencia y estilo.'
+            },
+            {
+                id: 'caj-06',
+                name: 'Cofre de Ensueño Floral',
+                category: 'cajas',
+                price: 55.00,
+                desc: 'Caja cilíndrica de lujo con rosas aterciopeladas y flores de acompañamiento.',
+                image: 'https://imgs.search.brave.com/0Hvp2bxKkWT-N2l9xoTZRJ-zThF1PZst_VxI3mVNhBY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/eWFha3VuZmxvcmVz/LmNvbS91cGxvYWRz/L2FycmVnbG9zL2Nh/amEtY2lyY3VsYXIt/bmVncmEtbWVkaWEt/ZXNmZXJhLWNvbi0z/NTAtcm9zYXMtcm9q/YXMteS1kZW5kcm92/aXVtLmpwZw',
+                detailedDesc: 'La presentación del momento. Nuestra caja rígida con el logo en foil dorado de Rosa Melissa Medrano, guarda una cama de flores hidratadas en oasis floral para conservar su frescura de forma sencilla.'
+            },
+            {
+                id: 'bod-07',
+                name: 'Sí, Acepto Floral',
+                category: 'bodas',
+                price: 110.00,
+                desc: 'Bouquet de novia o arreglo de altar con rosas blancas selectas y toques botánicos románticos.',
+                image: 'https://imgs.search.brave.com/aYboc10g2KVKJhjyAqCbL9Kzye4ItquMEz88qacKnKU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hdXJv/ZmxvcmFsLmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9BbGZhbWFy/YW1vZGVub3ZpYXBy/ZXNlcnZhZG9kZXJv/c2Fzcm9zYXByZXNl/cnZhZGFzX2hvcnRl/bnNpYWJsYW5jYXll/dWNhbGlwdHVzLmpw/Zz92PTE3NTMzNDQ4/NzMmd2lkdGg9MTAy/NA',
+                detailedDesc: 'Especialmente concebido para el día más importante de tu vida. Diseñado con flores de gran resistencia al tacto y al clima, garantizando un aspecto fotogénico e impecable en toda la jornada.'
+            },
+            {
+                id: 'eve-08',
+                name: 'Recepción Monumental',
+                category: 'eventos',
+                price: 150.00,
+                desc: 'Decoración floral para lobbies, salones de conferencias o bodas a gran escala.',
+                image: 'https://imgs.search.brave.com/d5nuBxpdIkvsR6Gw3LG_XQGAt_P5fPwEvJRyddqKRuY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lc3Bh/Y2lvLW9icmEuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI1/LzA4L0RlY29yYWNp/b24tZmxvcmFsLXBh/cmEtZXZlbnRvcy1l/c3BlY2lhbGVzLXBv/cnRhZGEtMTA4MHg2/NzUuanBn',
+                detailedDesc: 'Arreglos monumentales diseñados a medida. Ideales para puntos focales en recepciones, mesas de postres, o escenarios de marcas exclusivas que buscan transmitir naturaleza y distinción.'
+            }
+        ];
+
+        // ESTADO GLOBAL DE LA APLICACIÓN (CARRITO)
+        let cart = [];
+
+        // RENDERIZAR PRODUCTOS DEL CATÁLOGO
+        function renderProducts(filteredProducts) {
+            const grid = document.getElementById('catalog-grid');
+            grid.innerHTML = '';
+
+            filteredProducts.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'card-producto group bg-white border border-brandPink-100 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col justify-between';
+                card.innerHTML = `
+                    <div class="relative overflow-hidden h-64 sm:h-72 cursor-pointer" onclick="openProductModal('${product.id}')">
+                        <img src="${product.image}" alt="[${product.name}]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brandPink-500 text-white text-[10px] tracking-widest uppercase font-bold px-3 py-1 rounded-full shadow-sm">
+                            ${product.category}
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-playfair text-lg font-bold text-brandGreen-800 hover:text-brandGold-500 transition-colors cursor-pointer" onclick="openProductModal('${product.id}')">
+                                ${product.name}
+                            </h3>
+                            <p class="text-xs text-gray-400 mt-1 mb-3">${product.desc}</p>
+                        </div>
+                        <div>
+                            <span class="price text-brandGold-600 font-extrabold text-lg block mb-4">$${product.price.toFixed(2)} USD</span>
+                            <div class="flex space-x-2">
+                                <button onclick="addToCart('${product.id}')" class="flex-1 py-2.5 bg-brandGreen-700 hover:bg-brandGreen-800 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300">
+                                    Añadir
+                                </button>
+                                <button onclick="openProductModal('${product.id}')" class="p-2.5 bg-brandPink-50 text-brandGreen-800 hover:bg-brandPink-100 rounded-xl transition-all duration-300" title="Ver detalles personalizados">
+                                    <i class="fa-solid fa-eye text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // CONTROL DE FILTRADO DE PRODUCTOS
+        function filterCatalog(category) {
+            document.querySelectorAll('.category-filter-btn').forEach(btn => {
+                btn.className = 'category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandPink-50 text-brandGreen-800 hover:bg-brandPink-100 border border-brandPink-100';
+            });
+
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) {
+                activeBtn.className = 'category-filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 bg-brandGreen-700 text-white shadow-sm border border-brandGreen-700';
+            }
+
+            if (category === 'todos') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.category === category);
+                renderProducts(filtered);
+            }
+        }
+
+        // CONTROL DEL CARRITO
+        function addToCart(productId, customMessage = "") {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId && item.message === customMessage);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    qty: 1,
+                    message: customMessage
+                });
+            }
+
+            updateCartUI();
+            showToast(`"${product.name}" agregado con éxito al pedido.`, "success");
+        }
+
+        function removeFromCart(productId, message) {
+            cart = cart.filter(item => !(item.id === productId && item.message === message));
+            updateCartUI();
+            showToast("Producto removido del pedido.", "info");
+        }
+
+        function updateCartQty(productId, message, newQty) {
+            if (newQty <= 0) {
+                removeFromCart(productId, message);
+                return;
+            }
+            const item = cart.find(i => i.id === productId && i.message === message);
+            if (item) {
+                item.qty = newQty;
+                updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCountElement = document.getElementById('cart-count');
+            const cartSubtotalElement = document.getElementById('cart-subtotal');
+            const cartTotalElement = document.getElementById('cart-total');
+
+            const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+            if (totalQty > 0) {
+                cartCountElement.textContent = totalQty;
+                cartCountElement.classList.remove('scale-0');
+                cartCountElement.classList.add('scale-100');
+            } else {
+                cartCountElement.classList.remove('scale-100');
+                cartCountElement.classList.add('scale-0');
+            }
+
+            const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            cartSubtotalElement.textContent = `$${subtotal.toFixed(2)} USD`;
+            cartTotalElement.textContent = `$${subtotal.toFixed(2)} USD`;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="text-center py-12 text-gray-400 space-y-4">
+                        <i class="fa-solid fa-spa text-5xl text-brandPink-200"></i>
+                        <p class="text-sm font-light">Aún no has agregado flores a tu pedido.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'flex items-start space-x-4 p-3 bg-brandPink-50/50 rounded-2xl border border-brandPink-100';
+                itemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-xl border">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-bold text-brandGreen-800 text-sm truncate">${item.name}</h4>
+                        <p class="text-[10px] text-brandGold-600 font-semibold uppercase tracking-wider">${item.category}</p>
+                        ${item.message ? `<p class="text-[10px] text-gray-500 italic mt-1 bg-white p-1 rounded border border-brandPink-100">Dedicatoria: "${item.message}"</p>` : ''}
+                        
+                        <div class="flex items-center justify-between mt-3">
+                            <div class="flex items-center space-x-2 bg-white rounded-lg border border-brandPink-100 p-1">
+                                <button onclick="updateCartQty('${item.id}', '${item.message}', ${item.qty - 1})" class="px-2 text-xs text-gray-500 hover:text-brandPink-500">-</button>
+                                <span class="text-xs font-bold text-gray-700">${item.qty}</span>
+                                <button onclick="updateCartQty('${item.id}', '${item.message}', ${item.qty + 1})" class="px-2 text-xs text-gray-500 hover:text-brandPink-500">+</button>
+                            </div>
+                            <span class="text-xs font-bold text-brandGreen-800">$${(item.price * item.qty).toFixed(2)}</span>
+                        </div>
+                    </div>
+                    <button onclick="removeFromCart('${item.id}', '${item.message}')" class="text-gray-400 hover:text-brandPink-500 p-1">
+                        <i class="fa-solid fa-trash-can text-sm"></i>
+                    </button>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+            });
+        }
+
+        function toggleCart() {
+            const overlay = document.getElementById('cart-overlay');
+            const panel = document.getElementById('cart-panel');
+            const drawer = document.getElementById('cart-drawer');
+
+            if (panel.classList.contains('translate-x-full')) {
+                drawer.classList.remove('pointer-events-none');
+                overlay.classList.add('opacity-100');
+                overlay.classList.remove('pointer-events-none');
+                panel.classList.remove('translate-x-full');
+            } else {
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('pointer-events-none');
+                panel.classList.add('translate-x-full');
+                setTimeout(() => {
+                    drawer.classList.add('pointer-events-none');
+                }, 300);
+            }
+        }
+
+        // ENVIAR EL PEDIDO FORMATEADO POR WHATSAPP (Con prefijo internacional +593 de Ecuador)
+        function sendOrderWhatsApp() {
+            if (cart.length === 0) {
+                showToast("Por favor, añade al menos un producto para confirmar el pedido.", "info");
+                return;
+            }
+
+            let message = `🌸 *NUEVO PEDIDO - ROSA MELISSA MEDRANO (QUITO)* 🌸\n\n`;
+            message += `Hola, me gustaría solicitar los siguientes arreglos florales de lujo:\n\n`;
+
+            cart.forEach((item, index) => {
+                message += `*${index + 1}. ${item.name}* (Cant: ${item.qty})\n`;
+                message += `   • Categoría: ${item.category.toUpperCase()}\n`;
+                if (item.message) {
+                    message += `   • Dedicatoria: "${item.message}"\n`;
+                }
+                message += `   • Precio: $${(item.price * item.qty).toFixed(2)} USD\n\n`;
+            });
+
+            const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            message += `----------------------------------------\n`;
+            message += `💰 *TOTAL ESTIMADO:* $${total.toFixed(2)} USD\n`;
+            message += `🚚 *Servicio de envío a domicilio en Quito*\n\n`;
+            message += `Por favor, confírmenme la disponibilidad y los datos para la entrega. ¡Muchas gracias! ✨`;
+
+            const encodedText = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/593991234567?text=${encodedText}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            document.getElementById('modal-img').src = product.image;
+            document.getElementById('modal-img').alt = `[${product.name}]`;
+            document.getElementById('modal-title').textContent = product.name;
+            document.getElementById('modal-category').textContent = product.category;
+            document.getElementById('modal-price').textContent = `$${product.price.toFixed(2)} USD`;
+            document.getElementById('modal-desc').textContent = product.detailedDesc || product.desc;
+            document.getElementById('modal-custom-message').value = '';
+
+            const addBtn = document.getElementById('modal-add-btn');
+            addBtn.onclick = function() {
+                const customMessage = document.getElementById('modal-custom-message').value.trim();
+                addToCart(product.id, customMessage);
+                closeProductModal();
+                toggleCart();
+            };
+
+            const modal = document.getElementById('product-modal');
+            const content = document.getElementById('product-modal-content');
+
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+
+        function closeProductModal() {
+            const modal = document.getElementById('product-modal');
+            const content = document.getElementById('product-modal-content');
+
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            modal.classList.add('pointer-events-none', 'opacity-0');
+        }
+
+        function showToast(message, type = "success") {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMessage.textContent = message;
+
+            if (type === "success") {
+                toastIcon.innerHTML = `<i class="fa-solid fa-circle-check text-green-400 text-lg"></i>`;
+            } else if (type === "info") {
+                toastIcon.innerHTML = `<i class="fa-solid fa-info-circle text-brandGold-400 text-lg"></i>`;
+            }
+
+            toast.classList.remove('translate-x-[150%]');
+            toast.classList.add('translate-x-0');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-x-0');
+                toast.classList.add('translate-x-[150%]');
+            }, 3500);
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            showToast(`Gracias ${nombre}, hemos recibido tu mensaje. Nos comunicaremos contigo en breve para coordinar tu pedido en Quito.`, "success");
+            event.target.reset();
+        }
+
+        function handleSubscribe(event) {
+            event.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            showToast(`¡Excelente! El correo ${email} ha sido registrado al club de beneficios VIP.`, "success");
+            event.target.reset();
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.className = 'fa-solid fa-xmark text-xl sm:text-2xl';
+            } else {
+                menu.classList.add('hidden');
+                icon.className = 'fa-solid fa-bars text-xl sm:text-2xl';
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts(products);
+        });
+    </script>
+</body>
+</html>
